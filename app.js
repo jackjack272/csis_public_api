@@ -7,14 +7,14 @@ const port=process.env.PORT || 4000;
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json());
 
-app.options("*", cors({ origin: 'http://localhost:3000', optionsSuccessStatus: 200 }));
+app.options("*", cors({ origin: process.env.url, optionsSuccessStatus: 200 }));
 
-app.use(cors({ origin: "http://localhost:3000", optionsSuccessStatus: 200 }));
+app.use(cors({ origin: process.env.url, optionsSuccessStatus: 200 }));
 
-const crud_user= require("./Backend/user.routes");
+const crud_user= require("./user.routes");
 app.use("/",crud_user);
 
-const crud_loan= require("./Backend/loan.routes");
+const crud_loan= require("./loan.routes");
 app.use("/",crud_loan);
 
 

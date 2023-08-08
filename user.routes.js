@@ -1,5 +1,5 @@
 const router=require("express").Router()
-const db= require("../db_connect")
+const db= require("./db_connect")
 const crud= require('./user.cruds')
 const jwt = require('jsonwebtoken');
 
