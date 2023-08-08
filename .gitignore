@@ -1,0 +1,4 @@
+/node_modules
+
+const url=`mongodb+srv://CSIS_3280:123@cluster0.t7i3yvb.mongodb.net/project_crud`
+

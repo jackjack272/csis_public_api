@@ -1,0 +1,144 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "db_crud_webdev",
+    "dateExported": "2023-07-25T19:50:07.954Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "cbc5237d-f846-4854-8fe1-db85dcc3ea00",
+            "colId": "9aeb869b-3464-4f04-be93-ddd5e5ac36c2",
+            "containerId": "",
+            "name": "read loan",
+            "url": "localhost:3000/loan/james&oneal",
+            "method": "GET",
+            "sortNum": 312.5,
+            "created": "2023-07-25T19:48:52.290Z",
+            "modified": "2023-07-25T19:48:52.290Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "89900211-469e-41f0-bbc4-4f9afc31d544",
+            "colId": "9aeb869b-3464-4f04-be93-ddd5e5ac36c2",
+            "containerId": "",
+            "name": "add loan",
+            "url": "localhost:3000/loan/james&oneal",
+            "method": "POST",
+            "sortNum": 625,
+            "created": "2023-07-24T21:00:23.568Z",
+            "modified": "2023-07-25T19:43:56.843Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"type\":\"personal loan\",\"name\": \"education\",\n\"amount\": 1500,\"interest_rate\": 5.4,\n\"term\": 12,\"compouning_period\":3, \n\"expense\":true\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "458a6afd-89c0-49d9-87dc-05d12c59d0a0",
+            "colId": "9aeb869b-3464-4f04-be93-ddd5e5ac36c2",
+            "containerId": "",
+            "name": "delete user",
+            "url": "localhost:3000/user/james&oneal",
+            "method": "DELETE",
+            "sortNum": 1250,
+            "created": "2023-07-24T18:33:28.124Z",
+            "modified": "2023-07-24T20:13:50.055Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d3f3df43-b727-4b18-b1a8-424557771f3c",
+            "colId": "9aeb869b-3464-4f04-be93-ddd5e5ac36c2",
+            "containerId": "",
+            "name": "find user",
+            "url": "localhost:3000/user/james&oneal",
+            "method": "GET",
+            "sortNum": 5000,
+            "created": "2023-07-24T17:23:17.904Z",
+            "modified": "2023-07-24T20:59:59.455Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9af79acc-689a-4f25-bd90-a4bb0b45f36a",
+            "colId": "9aeb869b-3464-4f04-be93-ddd5e5ac36c2",
+            "containerId": "",
+            "name": "update user",
+            "url": "localhost:3000/user/james&oneal",
+            "method": "PUT",
+            "sortNum": 7500,
+            "created": "2023-07-24T17:46:18.192Z",
+            "modified": "2023-07-24T20:06:57.315Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"first\":\"ryan\",\n  \"last\":\"osamity\",\n  \"email\":\"lizards@gmail.com\",\n  \"password\":\"pineappleSauce\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "1cd2ffd0-6f7e-4662-9742-976ebab54faa",
+            "colId": "9aeb869b-3464-4f04-be93-ddd5e5ac36c2",
+            "containerId": "",
+            "name": "add user",
+            "url": "localhost:3000/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-07-24T16:50:48.679Z",
+            "modified": "2023-07-24T20:02:55.244Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"first\":\"james\",\n  \"last\":\"oneal\",\n  \"email\":\"james@gmail.com\",\n  \"password\":\"applSauce\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "55369a3c-a160-4ee5-8413-5a78353b96f2",
+            "colId": "9aeb869b-3464-4f04-be93-ddd5e5ac36c2",
+            "containerId": "",
+            "name": "dump db",
+            "url": "localhost:3000/dumpDB",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-07-25T19:31:48.579Z",
+            "modified": "2023-07-25T19:31:48.579Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
