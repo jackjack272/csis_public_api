@@ -7,7 +7,7 @@ const port=process.env.PORT || 4000;
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json());
 
-// app.options("*", cors({ origin: process.env.url, optionsSuccessStatus: 200 }));
+app.options("*");
 
 // app.use(cors({ origin: process.env.url, optionsSuccessStatus: 200 }));
 app.use(cors());
