@@ -1,12 +1,12 @@
 const router=require("express").Router()
-const db= require("./db_connect")
+// const db= require("./db_connect")
 const crud= require('./user.cruds')
 const jwt = require('jsonwebtoken');
 
      // this page deals with the user. 
 
 router.get("/",async(req, res)=>{
-     await db.connect();
+     // await db.connect();
      await crud.getAllUsers()
      .then(async (data) => {
           res.status(200).json(data)
@@ -15,7 +15,7 @@ router.get("/",async(req, res)=>{
 
 router.get("/dumpDB",async (req, res)=>{
      try{
-          await db.connect()
+          //await db.connect()
           await crud.dumpDB()
           await db.disconnect()
      }catch(e){
@@ -27,7 +27,7 @@ router.get("/dumpDB",async (req, res)=>{
 
 //route for user to log in
 router.post("/login", async (req, res) => {
-     await db.connect();
+     //await db.connect();
 
      const {email, password} = req.body;
      const userWithEmail = await crud.findByEmail(email).catch(
@@ -66,7 +66,7 @@ router.post("/register",async (req, res)=>{
           ){
           res.status(400).json({res:"need to add first and last name with email and password "})     
      }else{
-          await db.connect()
+          //await db.connect()
           // await crud.dumpDB()
           const value=await crud.makeUser(
                req.body.first, req.body.last,
@@ -91,7 +91,7 @@ router.get("/user/:first&:last", async (req, res)=>{
      }else{
           // console.log(req.params.first)
           // console.log(req.params.last)
-          await db.connect()
+          //await db.connect()
           
           const user=( await crud.findByName(first, last))
           // user= JSON.parse(user)
@@ -116,7 +116,7 @@ router.put("/user/:first&:last", async (req, res)=>{
           res.status().json({res:"need to have firstname lastname, and the replaceing values for fname lname, email, password "})
      }else{
 
-          await db.connect()
+          //await db.connect()
 
           await crud.UpdateUserByFirstLastName(
                find_fName,find_lName,re_fName,re_lName,re_email,re_password,
@@ -145,7 +145,7 @@ router.delete("/user/:first&:last", async(req, res)=>{
      }else{
 
           try{
-               await db.connect()
+               //await db.connect()
                await crud.deleteUserByFLName(fname, lname)
                res.status(200).json({res:"delete user successful"})
           }catch(e){

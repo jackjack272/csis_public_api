@@ -1,5 +1,5 @@
 const router= require('express').Router()
-const db= require("./db_connect")
+// const db= require("./db_connect")
 const loanCrud = require('./loan.crud')
 
 //******************         Create    ****************** */
@@ -25,7 +25,7 @@ router.post("/newloan/", async (req, res)=>{
           })
      }else{
           try{
-               await db.connect()
+               // await db.connect()
                await loanCrud.addLoan(email, 
                     type, expense, name, amount, interest_rate,
                     term, compounding_period)
@@ -40,14 +40,14 @@ router.post("/newloan/", async (req, res)=>{
 //******************         Read    ****************** */
 // find all loans
 router.get("/loans", async(req, res)=>{
-     await db.connect();
+     // await db.connect();
      const users = await loanCrud.getAllLoans();
           res.status(200).json({res:users});
 })
 //find loans by email
 router.get("/:email", async(req, res)=>{
      const email=req.params.email
-     await db.connect();
+     // await db.connect();
      await loanCrud.findLoansByEmail(email)
      .then(async (data) => {
           res.status(200).json(data)
@@ -58,7 +58,7 @@ router.get("/:email", async(req, res)=>{
 router.get("/:type/:email", async(req, res)=>{
      const type=req.params.type
      const email=req.params.email
-     await db.connect();
+     // await db.connect();
      await loanCrud.findByType(type, email)
      .then(async (data) => {
           res.status(200).json(data)
@@ -71,7 +71,7 @@ router.get("/:id", async(req, res)=>{
      if(id == null){
           res.status(400).json({res:"need loan id"})
      }
-     await db.connect()
+     // await db.connect()
      await loanCrud.findByID(id)
      .then(async (data) => {
           res.status(200).json(data)
@@ -96,7 +96,7 @@ router.post("/:id", async (req, res) => {
           res.status().json({res:"Need to fill all the fields"})
      }else{
 
-          await db.connect()
+          // await db.connect()
 
           await loanCrud.updateLoan(
                find_id, re_expense, re_name, re_amount, re_intrate, re_term, re_comp
@@ -113,7 +113,7 @@ router.post("/:id", async (req, res) => {
 // //******************         delete    ****************** */
 router.delete("/:id", async(req, res)=>{
      const loanID =req.params.id
-     await db.connect()
+     // await db.connect()
      await loanCrud.deleteLoan(loanID)
           .then(() => res.json('Loan deleted.'))
           .catch((err) => res.status(400).json('Error: ' + err));
