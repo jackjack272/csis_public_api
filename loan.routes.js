@@ -82,31 +82,27 @@ router.get("/:id", async(req, res)=>{
 //******************         update    ****************** */
 
 router.post("/:id", async (req, res) => {
-     find_id = req.params.id
+     const find_id = req.params.id
      //replace values
-     re_expense=req.body.expense
-     re_name=req.body.name
-     re_amount=req.body.amount
-     re_intrate=req.body.interest_rate
-     re_term=req.body.term
-     re_comp=req.body.compounding_period
+     const re_expense=req.body.expense
+     const re_name=req.body.name
+     const re_amount=req.body.amount
+     const re_intrate=req.body.interest_rate
+     const re_term=req.body.term
+     const re_comp=req.body.compounding_period
 
      if(find_id ==null||re_expense ==null||re_name==null||re_amount==null
           ||re_intrate==null ||re_term==null ||re_comp==null){
           res.status().json({res:"Need to fill all the fields"})
      }else{
-
-          await db.connect()
-
-          await loanCrud.updateLoan(
-               find_id, re_expense, re_name, re_amount, re_intrate, re_term, re_comp
-          )
-          .then( async ()=>{
-               res.status(200).json({res:"Loan updated succesfully"})
-          })
-          .catch( async ()=>{    
-               res.status(400).json({res:"Failed to update loan"} ) 
-          })
+          try{
+               await db.connect()
+               await loanCrud.updateLoan(find_id, re_expense, re_name, re_amount, re_intrate, re_term, re_comp)
+          }catch(e){
+               res.status(400).json({res:"failed to update loan" })
+          }finally{
+               res.status(200).json({res:"sucesfully updated loan" })
+          }
      }
 })
 
