@@ -81,7 +81,7 @@ router.get("/:id", async(req, res)=>{
 
 //******************         update    ****************** */
 
-router.put("/:id", async (req, res) => {
+router.post("/:id", async (req, res) => {
      find_id = req.params.id
      //replace values
      re_expense=req.body.expense
